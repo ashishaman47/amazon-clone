@@ -1,0 +1,80 @@
+/* by default containers has inline display type --> stack top of each other */
+.header {
+  background-color: #131921;
+  display: flex;
+  align-items: center;
+  /* fixing the navbar at top */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header__logo {
+  width: 100px;
+  object-fit: contain;
+  margin: 0 20px;
+  margin-top: 18px;
+}
+
+.header__logo:hover {
+  cursor: pointer;
+}
+
+.header__search {
+  display: flex;
+  /* flex-1 says this search container use as much space as possible */
+  flex: 1;
+}
+
+.header__searchInput {
+  height: 12px;
+  padding: 10px;
+  border: none;
+  width: 100%;
+}
+
+.header__searchIcon {
+  background-color: #cd9042;
+  padding: 5px;
+  height: 22px !important;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.header__link {
+  color: white;
+  /* removes underline from link */
+  text-decoration: none;
+}
+
+.header__option {
+  /* changing the flex direction */
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.header__optionLineOne {
+  font-size: 10px;
+}
+
+.header__optionLineTwo {
+  font-size: 13px;
+  /* font-weight:  increases in 100 i.e the boldness */
+  font-weight: 800;
+}
+
+.header__optionBasket {
+  display: flex;
+  align-items: center;
+}
+
+.header__basketCount {
+  margin-left: 10px;
+  margin-right: 10px;
+}
