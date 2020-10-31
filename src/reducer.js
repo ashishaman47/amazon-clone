@@ -24,6 +24,12 @@ const reducer = (state, action) => {
         basket: [...state.basket, action.item], //returning basket whatever it currently was + item that we added
       };
 
+    case 'EMPTY_BASKET':
+      return {
+        ...state,
+        basket: [],
+      };
+
     case 'REMOVE_FROM_BASKET':
       //Logic to removing item from basket
 
@@ -35,11 +41,11 @@ const reducer = (state, action) => {
         (basketItem) => basketItem.id === action.id
       );
 
-      //   it goes to that particular index and splice it or cut it
-      newBasket.splice(index, 1);
-
       if (index >= 0) {
         //item exits in basket, remove it
+
+        //   it goes to that particular index and splice it or cut it
+        newBasket.splice(index, 1);
       } else {
         // show red console log --> console.warn()
         console.warn(

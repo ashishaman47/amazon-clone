@@ -29,8 +29,11 @@ function Login() {
     auth
       .createUserWithEmailAndPassword(email, password)
       .then((auth) => {
+        console.log(auth);
         // created a user and logged in, redirect to homepage...
-        history.push('/');
+        if (auth) {
+          history.push('/');
+        }
       })
       .catch((e) => alert(e.message));
   };

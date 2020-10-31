@@ -26,7 +26,7 @@ function Header() {
       <Link to='/'>
         <img
           className='header__logo'
-          src='https://drive.google.com/file/d/15vB8czrM8N0vzNZszQJ_rX50v42GUZOx/view?usp=sharing'
+          src='http://pngimg.com/uploads/amazon/amazon_PNG11.png'
           alt=''
         />
       </Link>
@@ -42,7 +42,9 @@ function Header() {
         {/* if there is no user logged in then push it to login page otherwise */}
         <Link to={!user && '/login'} className='header__link'>
           <div onClick={login} className='header__option'>
-            <span className='header__optionLineOne'>Hello {user?.email}</span>
+            <span className='header__optionLineOne'>
+              Hello {!user ? 'Guest' : user?.email}
+            </span>
             <span className='header__optionLineTwo'>
               {user ? 'Sign Out' : 'Sign In'}
             </span>
@@ -50,7 +52,7 @@ function Header() {
         </Link>
 
         {/* 2nd links */}
-        <Link to='/' className='header__link'>
+        <Link to='/orders' className='header__link'>
           <div className='header__option'>
             <span className='header__optionLineOne'>Returns</span>
             <span className='header__optionLineTwo'>& Orders</span>

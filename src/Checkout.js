@@ -6,7 +6,7 @@ import Subtotal from './Subtotal';
 
 function Checkout() {
   //pulling basket from the store
-  const [{ basket }] = useStateValue();
+  const [{ basket, user }] = useStateValue();
 
   return (
     <div className='checkout'>
@@ -17,6 +17,11 @@ function Checkout() {
           src='https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._CB423492668_.jpg'
           alt=''
         />
+
+        <div>
+          <h3>Hello, {user?.email}</h3>
+        </div>
+
         {basket?.length === 0 ? (
           <div>
             <h2>Your Shopping Cart is Empty!</h2>
